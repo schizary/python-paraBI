@@ -56,3 +56,38 @@ resultado = pd.DataFrame({
 })
 
 resultado
+
+
+
+
+# LISTA AS COLUNAS 
+
+import pandas as pd
+
+df = dataset.copy()
+
+print(df.columns.tolist())  # lista os nomes das colunas exatamente como o Python recebeu
+df.head()
+
+
+
+# EXEMPLO COM COLUNAS 
+
+
+import pandas as pd
+
+df = dataset.copy()
+
+media_qtd = df["Qtd. Vendida"].mean()
+mediana_qtd = df["Qtd. Vendida"].median()
+moda_qtd = df["Qtd. Vendida"].mode()[0]
+desvio_qtd = df["Qtd. Vendida"].std()
+
+resultado = pd.DataFrame({
+    "Média Qtd. Vendida": [media_qtd],
+    "Mediana Qtd. Vendida": [mediana_qtd],
+    "Moda Qtd. Vendida": [moda_qtd],
+    "Desvio Padrão Qtd. Vendida": [desvio_qtd]
+})
+
+resultado
